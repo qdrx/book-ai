@@ -1,0 +1,23 @@
+ version: '3'
+ services:
+   postgresql:
+     image: postgres
+     container_name: flamboyant_cartwright
+     ports:
+       - "5432:5432"
+     environment:
+       - POSTGRES_HOST=localhost
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=admin
+       - POSTGRES_DATABASE=book-ai
+     command: postgres
+     restart: always
+
+   redis:
+     image: redis:latest
+     container_name: intelligent_yonath
+     ports:
+       - "6379:6379"
+
+
+
